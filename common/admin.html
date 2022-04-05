@@ -1,0 +1,922 @@
+<!--Alpha X Software Company-->
+<!--Mindula Dilthushan-->
+<!--GMA v2.0.3-->
+<!--21-06-25 Complete-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1 maximum-scale=1 minimum-scale=1">
+    <title>GMA - Admin</title>
+    <link rel="icon" href="../assets/img/logo.png">
+    <link rel="stylesheet" href="../css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="../src/testing/testing.css">
+</head>
+<body>
+<div id="wrapper">
+    <nav class="navbar  align-items-start sidebar accordion p-0">
+        <div class="container-fluid d-flex flex-column p-0">
+            <div class="m-0 p-0"><img style="top: 20px;position: relative" id="admin_logo" src="../assets/img/logo.png">
+            </div>
+            <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0 p-0"
+               href="admin.html">
+                <div class="sidebar-brand-text" style="position: relative; bottom: 10px; font-size: 0.9rem">Gold Medal
+                    AutoMotive
+                </div>
+            </a>
+            <div style="background-color: white; position: absolute; top: 165px; width: 220px; height: 2px;"></div>
+            <ul class="nav navbar-nav mt-5">
+                <li class="nav-item">
+                    <a class="text-white nav-link" id="btn_mainPage" style="cursor: pointer">Dashboard</a>
+                    <img style="position:absolute; top: 7px; left: 125px; width: 30px; height: 30px;"
+                         src="../assets/icon/admin/icons8_home_64.png">
+                </li>
+                <li class="nav-item">
+                    <a class="text-white nav-link" id="btn_ProfilePage" style="cursor: pointer">Profile</a>
+                    <img style="position:absolute; top: 7px; left: 125px; width: 30px; height: 30px;"
+                         src="../assets/icon/admin/icons8_profile_64.png">
+                </li>
+                <li class="nav-item">
+                    <a class="text-white nav-link" id="btn_CustomerPage" style="cursor: pointer">Customers</a>
+                    <img style="position:absolute; top: 7px; left: 125px; width: 30px; height: 30px;"
+                         src="../assets/icon/admin/icons8_customer_64.png">
+                </li>
+                <li class="nav-item">
+                    <a class="text-white nav-link" id="btn_CarPage" style="cursor: pointer">Car</a>
+                    <img style="position:absolute; top: 7px; left: 125px; width: 30px; height: 30px;"
+                         src="../assets/icon/admin/icons8_car_64.png">
+                </li>
+                <li class="nav-item">
+                    <a class="text-white nav-link" id="btn_DriverPage" style="cursor: pointer">Drivers</a>
+                    <img style="position:absolute; top: 7px; left: 125px; width: 30px; height: 30px;"
+                         src="../assets/icon/admin/icons8_driver_64.png">
+                </li>
+                <li class="nav-item">
+                    <a class="text-white nav-link" id="btn_OrderPage" style="cursor: pointer">Orders</a>
+                    <img style="position:absolute; top: 7px; left: 125px; width: 30px; height: 30px;"
+                         src="../assets/icon/admin/icons8_Create_Order_64.png">
+                </li>
+                <li class="nav-item">
+                    <a class="text-white nav-link" id="btn_PaymentPage" style="cursor: pointer">Payments</a>
+                    <img style="position:absolute; top: 7px; left: 125px; width: 30px; height: 30px;"
+                         src="../assets/icon/admin/icons8_payment_history_64.png">
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="d-flex flex-column bg-light" id="content-wrapper">
+        <div id="content" class="m-0 p-0">
+            <nav class="navbar navbar-light navbar-expand bg-white shadow topbar static-top">
+                <div class="container-fluid">
+                    <button class="btn btn-link d-md-none rounded-circle mr-3" type="button"></button>
+                    <form class="form-inline d-none d-sm-inline-block mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                        <div class="input-group"><input class="bg-light form-control border-0 small" type="text"
+                                                        placeholder="Search for ...">
+                            <div class="input-group-append">
+                                <button class="btn py-0" type="button"><img src="../assets/icon/icons8_search.ico">
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="nav-item dropdown no-arrow">
+                        <a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">
+                            <span class="d-none d-lg-inline mr-2 text-gray-600 small" style="font-size: 1rem">Mindula Dilthushan</span>
+                            <img class="rounded-circle img-profile" src="../assets/icon/icons8_businessman_32.png"></a>
+                        <div class="dropdown-menu shadow dropdown-menu-right animated--grow-in" role="menu">
+                            <a class="dropdown-item" role="presentation" style="cursor: pointer" id="btnAdminProfile">Profile</a>
+                            <div class="dropdown-divider">
+                            </div>
+                            <a class="dropdown-item" href="../index.html" role="presentation" style="cursor: pointer"
+                               id="btnAdminLogout">Logout</a></div>
+
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+
+        <div class="main-panel bg-light m-0 p-0 ">
+
+            <!--  Start Admin Home Page-->
+            <div style="display: block" id="admin_Home_Page">
+                <h3 class="text-dark mb-4 mt-4 ml-4">Dashboard</h3>
+                <div class="container-fluid">
+                    <div class="row mt-4">
+                        <div class="col-md-6 col-xl-3 mb-4">
+                            <div class="card shadow border-left-warning py-2">
+                                <div class="card-body">
+                                    <div class="row align-items-center no-gutters">
+                                        <div class="col mr-2">
+                                            <div class="text-uppercase text-warning font-weight-bold text-xs mb-1">
+                                                <span>Customers</span>
+                                            </div>
+                                            <div class="text-dark font-weight-bold h5 mb-0"><span id="TxtCustomerCount">7</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-auto"><img id="custom_pic"
+                                                                   src="../assets/icon/icons8_customer_64.png">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-3 mb-4">
+                            <div class="card shadow border-left-warning py-2">
+                                <div class="card-body">
+                                    <div class="row align-items-center no-gutters">
+                                        <div class="col mr-2">
+                                            <div class="text-uppercase text-warning font-weight-bold text-xs mb-1">
+                                                <span>Cars</span>
+                                            </div>
+                                            <div class="text-dark font-weight-bold h5 mb-0"><span
+                                                    id="txtCarCount">15</span></div>
+                                        </div>
+                                        <div class="col-auto"><img id="car_pic"
+                                                                   src="../assets/icon/icons8_car_64.png">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-3 mb-4">
+                            <div class="card shadow border-left-warning py-2">
+                                <div class="card-body">
+                                    <div class="row align-items-center no-gutters">
+                                        <div class="col mr-2">
+                                            <div class="text-uppercase text-warning font-weight-bold text-xs mb-1">
+                                                <span>Drivers</span></div>
+                                            <div class="row no-gutters align-items-center">
+                                                <div class="col-auto">
+                                                    <div class="text-dark font-weight-bold h5 mb-0" id="txtDriverCount">
+                                                        5<span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-auto"><img id="driver_pic"
+                                                                   src="../assets/icon/icons8_driver_64.png">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-3 mb-4">
+                            <div class="card shadow border-left-warning py-2">
+                                <div class="card-body">
+                                    <div class="row align-items-center no-gutters">
+                                        <div class="col mr-2">
+                                            <div class="text-uppercase text-warning font-weight-bold text-xs mb-1">
+                                                <span>Orders</span>
+                                            </div>
+                                            <div class="text-dark font-weight-bold h5 mb-0"><span
+                                                    id="txtOrderCount">10</span></div>
+                                        </div>
+                                        <div class="col-auto"><img id="order_pic"
+                                                                   src="../assets/icon/icons8_purchase_order_64.png">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="adminHomePageSection">
+                        <div class="row">
+                            <div class="col-lg-7 col-xl-8">
+                                <div class="card shadow mb-4">
+                                    <div class="card-header d-flex justify-content-between align-items-center">
+                                        <h6 class="text-primary font-weight-bold m-0">Overview</h6>
+                                        <div class="dropdown no-arrow">
+                                            <button class="btn btn-link btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false" type="button">
+                                                <i class="fas fa-ellipsis-v text-gray-400"></i>
+                                            </button>
+                                            <div class="dropdown-menu shadow dropdown-menu-right animated--fade-in" role="menu">
+                                                <p class="text-center dropdown-header">dropdown header:</p>
+                                                <a class="dropdown-item" role="presentation" href="#">&nbsp;Action</a>
+                                                <a class="dropdown-item" role="presentation" href="#">&nbsp;Another action</a>
+                                                <div class="dropdown-divider">
+                                                </div><a class="dropdown-item" role="presentation" href="#">&nbsp;Something else here</a></div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="chart-area mt-3">
+                                            <canvas data-bs-chart="{&quot;type&quot;:&quot;line&quot;,&quot;data&quot;:{&quot;labels&quot;:[&quot;Jan&quot;,&quot;Feb&quot;,&quot;Mar&quot;,&quot;Apr&quot;,&quot;May&quot;,&quot;Jun&quot;,&quot;Jul&quot;,&quot;Aug&quot;]
+                                            ,&quot;datasets&quot;:[{&quot;label&quot;:&quot;Earnings&quot;,&quot;fill&quot;:true,&quot;data&quot;:[&quot;0&quot;,&quot;10000&quot;,&quot;5000&quot;,&quot;15000&quot;,&quot;10000&quot;,&quot;20000&quot;,&quot;15000&quot;,&quot;25000&quot;],&quot;backgroundColor&quot;:&quot;rgba(78, 115, 223, 0.05)&quot;,&quot;borderColor&quot;:&quot;rgba(78, 115, 223, 1)&quot;}]},&quot;options&quot;:{&quot;maintainAspectRatio&quot;:false,&quot;legend&quot;:{&quot;display&quot;:false},&quot;title&quot;:{},&quot;scales&quot;:{&quot;xAxes&quot;:[{&quot;gridLines&quot;:{&quot;color&quot;:&quot;rgb(234, 236, 244)&quot;,&quot;zeroLineColor&quot;:&quot;rgb(234, 236, 244)&quot;,&quot;drawBorder&quot;:false,&quot;drawTicks&quot;:false,&quot;borderDash&quot;:[&quot;2&quot;],&quot;zeroLineBorderDash&quot;:[&quot;2&quot;],&quot;drawOnChartArea&quot;:false},&quot;ticks&quot;:{&quot;fontColor&quot;:&quot;#858796&quot;,&quot;padding&quot;:20}}],&quot;yAxes&quot;:[{&quot;gridLines&quot;:{&quot;color&quot;:&quot;rgb(234, 236, 244)&quot;,&quot;zeroLineColor&quot;:&quot;rgb(234, 236, 244)&quot;,&quot;drawBorder&quot;:false,&quot;drawTicks&quot;:false,&quot;borderDash&quot;:[&quot;2&quot;],&quot;zeroLineBorderDash&quot;:[&quot;2&quot;]},&quot;ticks&quot;:{&quot;fontColor&quot;:&quot;#858796&quot;,&quot;padding&quot;:20}}]}}}"></canvas></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-7 col-xl-4">
+                                <div class="card shadow">
+                                    <div class="card-header d-flex justify-content-between align-items-center">
+                                        <h6 class="text-primary font-weight-bold m-0">Revenue Sources</h6>
+                                        <div class="dropdown no-arrow"><button class="btn btn-link btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false" type="button"><i class="fas fa-ellipsis-v text-gray-400"></i></button>
+                                            <div class="dropdown-menu shadow dropdown-menu-right animated--fade-in"
+                                                 role="menu">
+                                                <p class="text-center dropdown-header">dropdown header:</p><a class="dropdown-item" role="presentation" href="#">&nbsp;Action</a><a class="dropdown-item" role="presentation" href="#">&nbsp;Another action</a>
+                                                <div class="dropdown-divider"></div><a class="dropdown-item" role="presentation" href="#">&nbsp;Something else here</a></div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="chart-area"><canvas data-bs-chart="{&quot;type&quot;:&quot;doughnut&quot;,&quot;data&quot;:{&quot;labels&quot;:[&quot;Direct&quot;,&quot;Social&quot;,&quot;Referral&quot;],&quot;datasets&quot;:[{&quot;label&quot;:&quot;&quot;,&quot;backgroundColor&quot;:[&quot;#4e73df&quot;,&quot;#1cc88a&quot;,&quot;#36b9cc&quot;],&quot;borderColor&quot;:[&quot;#ffffff&quot;,&quot;#ffffff&quot;,&quot;#ffffff&quot;],&quot;data&quot;:[&quot;50&quot;,&quot;30&quot;,&quot;15&quot;]}]},&quot;options&quot;:{&quot;maintainAspectRatio&quot;:false,&quot;legend&quot;:{&quot;display&quot;:false},&quot;title&quot;:{}}}"></canvas></div>
+                                        <div class="text-center small">
+                                            <span class="mr-2"><i class="fas fa-circle text-primary"></i>&nbsp;Cars</span>
+                                            <span class="mr-2"><i class="fas fa-circle text-success"></i>&nbsp;Drivers</span>
+                                            <span class="mr-2"><i class="fas fa-circle text-info"></i>&nbsp;Customers</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!--  End Admin Home Page-->
+
+            <!--  Start Admin Profile Page-->
+            <div style="display: none" id="admin_profile_Page">
+                <div class="container-fluid">
+                    <h3 class="text-dark mb-4 mt-4">Profile</h3>
+                    <div class="row mb-3">
+                        <div class="col-lg-4">
+                            <div class="card mb-3">
+                                <div class="card-body text-center shadow">
+                                    <img class="rounded-circle mb-3 mt-4" src="../assets/img/me/me.jpg" width="170"
+                                         height="170"/>
+                                    <div class="mb-3">
+                                        <button class="btn btn-sm mb-2 mt-2" type="button" id="admin_btn_change_pic">
+                                            Change Photo
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-8">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="card shadow mb-3">
+                                        <div class="card-header py-3">
+                                            <p class="m-0 font-weight-bold" id="admin_name_title">Admin Profile
+                                                Settings</p>
+                                        </div>
+                                        <div class="card-body">
+                                            <form>
+                                                <div class="form-row">
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <label><strong>ID</strong></label>
+                                                            <input
+                                                                    id="adminID"
+                                                                    class="form-control"
+                                                                    type="text"
+                                                                    placeholder="A###"
+                                                                    name="adminId"
+                                                                    value="A001"
+                                                            >
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <label><strong>Email Address</strong></label>
+                                                            <input
+                                                                    id="adminEmail"
+                                                                    class="form-control"
+                                                                    type="email"
+                                                                    value="minduladilthushan1@gmail.com"
+                                                                    placeholder="user@example.com"
+                                                                    name="email">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <label><strong> User Name</strong></label>
+                                                            <input
+                                                                    value="Mindula Dilthushan"
+                                                                    id="adminName"
+                                                                    class="form-control"
+                                                                    type="text"
+                                                                    placeholder="user.name"
+                                                                    name="username">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <label><strong>Password</strong></label>
+                                                            <input  value="1023"
+                                                                    id="adminPassword"
+                                                                    class="form-control"
+                                                                    type="password"
+                                                                    placeholder="######"
+                                                                    name="password">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <label><strong>Confirm Password</strong></label>
+                                                            <input id="adminConfirmPassword"
+                                                                   class="form-control"
+                                                                   value="1023"
+                                                                   type="password"
+                                                                   placeholder="######"
+                                                                   name="confirm_password">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group mb-2">
+                                                    <button id="btnAdminSave" class="btn  btn-sm" type="button">Save
+                                                    </button>
+                                                    <button id="btnAdminUpdate" class="btn  btn-sm" type="button">
+                                                        Update
+                                                    </button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!--  End Admin Profile Page-->
+
+            <!--  Start Admin Customer Page-->
+            <div style="display: none" id="admin_Customer_Page">
+                <div class="container-fluid">
+                    <h3 class="text-dark mb-4 mt-4">Customers</h3>
+                    <div class="col-lg-12 p-0">
+                        <div class="row">
+                            <div class="col">
+                                <div class="card shadow mb-3">
+                                    <div class="card-header py-3">
+                                        <p class="m-0 font-weight-bold">Customer Settings</p>
+                                    </div>
+                                    <div class="card-body">
+                                        <form>
+                                            <div class="form-row">
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label><strong>ID</strong></label>
+                                                        <input id="adCustId"
+                                                               class="form-control"
+                                                               type="text"
+                                                               placeholder="C###"
+                                                               name="id"
+                                                               onkeypress="searchCustomer(this)">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label><strong>Name</strong></label>
+                                                        <input id="adCustName"
+                                                               class="form-control"
+                                                               type="text"
+                                                               placeholder="user.name"
+                                                               name="name">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label><strong>Address</strong></label>
+                                                        <input id="adCustAddress"
+                                                               class="form-control"
+                                                               type="text"
+                                                               placeholder="user.address"
+                                                               name="address">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label><strong>Email</strong></label>
+                                                        <input id="adCustEmail"
+                                                               class="form-control"
+                                                               type="email"
+                                                               placeholder="user@example.com"
+                                                               name="email">
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label><strong>NIC</strong></label>
+                                                        <input id="adCustNic"
+                                                               class="form-control"
+                                                               type="text"
+                                                               placeholder="user.nic"
+                                                               name="nic">
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label><strong>Driving License</strong></label>
+                                                        <input id="adCustDl"
+                                                               class="form-control"
+                                                               type="text"
+                                                               placeholder="user.driving license"
+                                                               name="drivinglic">
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label><strong>Contact</strong></label>
+                                                        <input id="adCustContact"
+                                                               class="form-control"
+                                                               type="text"
+                                                               placeholder="07# #######"
+                                                               name="contact">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group mb-2">
+                                                <button id="btnAdminCustomerSave" class="btn  btn-sm" type="button">
+                                                    Save
+                                                </button>
+                                                <button id="btnAdminCustomerUpdate" class="btn  btn-sm" type="button">
+                                                    Update
+                                                </button>
+                                                <button id="btnAdminCustomerDelete" class="btn  btn-sm" type="button">
+                                                    Delete
+                                                </button>
+                                                <button id="btnAdminCustomerGetAll" class="btn  btn-sm" type="button">
+                                                    Get All
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="table-box" style="height: 250px; overflow: no-display">
+                        <div class="table-responsive-lg">
+                            <table class="table table-hover">
+                                <thead class="text-white" id="tblCustomerHeader">
+                                <tr>
+                                    <th scope="col">ID</th>
+                                    <th scope="col">Nic No</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Address</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Driving Licence No</th>
+                                    <th scope="col">Contact</th>
+                                </tr>
+                                </thead>
+                                <tbody id="tblCustomerBody">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--  End Admin Customer Page-->
+
+            <!--  Start Admin Car Page-->
+            <div style="display: none" id="admin_Car_Page">
+                <div class="container-fluid">
+                    <h3 class="text-dark mb-4 mt-4">Cars</h3>
+                    <div class="col-lg-12 p-0">
+                        <div class="row">
+                            <div class="col">
+                                <div class="card shadow mb-3">
+                                    <div class="card-header py-3">
+                                        <p class="m-0 font-weight-bold">Cars Settings</p>
+                                    </div>
+                                    <div class="card-body">
+                                        <form>
+                                            <div class="form-row">
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label><strong>ID</strong></label>
+                                                        <input
+                                                                id="adCarId"
+                                                                class="form-control"
+                                                                type="text"
+                                                                placeholder="C###"
+                                                                name="id"
+                                                                onkeypress="searchCar(this)">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label><strong>Brand</strong></label>
+
+                                                        <select class="custom-select mb-3" id="adCarBrand">
+                                                            <option selected>Car Brand</option>
+                                                            <option value="Dodge">Dodge</option>
+                                                            <option value="Chevrolet">Chevrolet</option>
+                                                            <option value="BM2">BM2</option>
+                                                            <option value="Hyundai">Hyundai</option>
+                                                            <option value="Mazda">Mazda</option>
+                                                            <option value="Toyota">Toyota</option>
+                                                            <option value="Volvo">Volvo</option>
+                                                            <option value="Tesla">Tesla</option>
+                                                            <option value="Audi">Audi</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label><strong>Color</strong></label>
+                                                        <select class="custom-select mb-3" id="adCarColor">
+                                                            <option selected>Car Color</option>
+                                                            <option value="Red">Red</option>
+                                                            <option value="Black">Black</option>
+                                                            <option value="White">White</option>
+                                                            <option value="Blue">Blue</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label><strong>Type</strong></label>
+                                                        <select class="custom-select mb-3" id="adCarType">
+                                                            <option selected>Car Type</option>
+                                                            <option value="General">General</option>
+                                                            <option value="Premium">Premium</option>
+                                                            <option value="Luxury">Luxury</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label><strong>Passengers</strong></label>
+                                                        <select class="custom-select mb-3" id="adCarPassengers">
+                                                            <option selected>Passengers</option>
+                                                            <option value=2>2</option>
+                                                            <option value=4>4</option>
+                                                            <option value=5>5</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-row">
+
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label><strong>Transmission Type</strong></label>
+                                                        <select class="custom-select mb-3" id="adCarTransmission">
+                                                            <option selected>Transmission</option>
+                                                            <option value="Manual">Manual</option>
+                                                            <option value="Auto">Auto</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label><strong>Fuel Type</strong></label>
+                                                        <select class="custom-select mb-3" id="adCarFuel">
+                                                            <option selected>Fuel</option>
+                                                            <option value="Diesel">Diesel</option>
+                                                            <option value="prechtel">prechtel</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label><strong>Price For Extra KM</strong></label>
+                                                        <input class="form-control"
+                                                               type="text"
+                                                               id="adCarExtraKm"
+                                                               placeholder="car.extra km"
+                                                               name="extra_km">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label><strong>Registration No</strong></label>
+                                                        <input class="form-control"
+                                                               type="text"
+                                                               id="adCarRegistration"
+                                                               placeholder="car.reg"
+                                                               name="reg">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label><strong>Loss Damage Waiver</strong></label>
+                                                        <input class="form-control"
+                                                               type="text"
+                                                               id="adCarDamage"
+                                                               placeholder="car.damage"
+                                                               name="damage">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-row">
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label><strong>Daily Rate</strong></label>
+                                                        <input class="form-control"
+                                                               type="text"
+                                                               id="adCarDailyRate"
+                                                               placeholder="car.daily"
+                                                               name="daily">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label><strong>Monthly Rate</strong></label>
+                                                        <input class="form-control"
+                                                               type="text"
+                                                               id="adCarMonthlyRate"
+                                                               placeholder="car.monthly"
+                                                               name="monthly">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label><strong>Free Millage Price</strong></label>
+                                                        <input class="form-control"
+                                                               type="text"
+                                                               id="adCarMillagePrice"
+                                                               placeholder="car.millage"
+                                                               name="millage">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label><strong>Free Millage Duration</strong></label>
+                                                        <input class="form-control"
+                                                               type="text"
+                                                               id="adCarDuration"
+                                                               placeholder="car.duration"
+                                                               name="duration">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group mb-2">
+                                                <button id="btnAdminCarSave" class="btn  btn-sm" type="button">Save
+                                                </button>
+                                                <button id="btnAdminCarUpdate" class="btn  btn-sm" type="button">
+                                                    Update
+                                                </button>
+                                                <button id="btnAdminCarDelete" class="btn  btn-sm" type="button">
+                                                    Delete
+                                                </button>
+                                                <button id="btnAdminCarGetAll" class="btn  btn-sm" type="button"> Get
+                                                    All
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="table-box" style="height: 250px; overflow: no-display">
+                        <div class="table-responsive-lg">
+                            <table class="table table-hover">
+                                <thead class="text-white" id="tblCarHeader">
+                                <tr>
+                                    <th scope="col">ID</th>
+                                    <th scope="col">Reg No</th>
+                                    <th scope="col">Brand</th>
+                                    <th scope="col">No Of Passengers</th>
+                                    <th scope="col">Transmission</th>
+                                    <th scope="col">Car Type</th>
+                                    <th scope="col">Color</th>
+                                    <th scope="col">Fuel Type</th>
+                                </tr>
+                                </thead>
+                                <tbody id="tblCarBody">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--  End Admin Car Page-->
+
+            <!-- Start Admin Driver Page -->
+            <div style="display: none" id="admin_Driver_Page">
+                <div class="container-fluid">
+                    <h3 class="text-dark mb-4 mt-4">Driver</h3>
+                    <div class="col-lg-12 p-0">
+                        <div class="row">
+                            <div class="col">
+                                <div class="card shadow mb-3">
+                                    <div class="card-header py-3">
+                                        <p class="m-0 font-weight-bold">Driver Settings</p>
+                                    </div>
+                                    <div class="card-body">
+                                        <form>
+                                            <div class="form-row">
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label><strong>ID</strong></label>
+                                                        <input id="adDriverId"
+                                                               class="form-control"
+                                                               type="text"
+                                                               placeholder="D###"
+                                                               name="id">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label><strong>Name</strong></label>
+                                                        <input id="adDriverName"
+                                                               class="form-control"
+                                                               type="text"
+                                                               placeholder="driver.name"
+                                                               name="name">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label><strong>NIC</strong></label>
+                                                        <input id="adDriverNIC"
+                                                               class="form-control"
+                                                               type="text"
+                                                               placeholder="driver.nic"
+                                                               name="nic">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label><strong>Contact</strong></label>
+                                                        <input id="adDriverContact"
+                                                               class="form-control"
+                                                               type="text"
+                                                               placeholder="07#"
+                                                               name="contact">
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label><strong>Email</strong></label>
+                                                        <input id="adDriverEmail"
+                                                               class="form-control"
+                                                               type="email"
+                                                               placeholder="driver@gmail.com"
+                                                               name="email">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="form-group mb-2">
+                                                <button id="btnAdminDriverSave" class="btn  btn-sm" type="button">Save
+                                                </button>
+                                                <button id="btnAdminDriverUpdate" class="btn  btn-sm" type="button">
+                                                    Update
+                                                </button>
+                                                <button id="btnAdminDriverDelete" class="btn  btn-sm" type="button">
+                                                    Delete
+                                                </button>
+                                                <button id="btnAdminDriverGetAll" class="btn  btn-sm" type="button">
+                                                    Get
+                                                    All
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="table-box" style="height: 250px; overflow: no-display">
+                        <div class="table-responsive-lg">
+                            <table class="table table-hover">
+                                <thead class="text-white" id="tblDriver">
+                                <tr>
+                                    <th scope="col">ID</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">NIC</th>
+                                    <th scope="col">Contact</th>
+                                    <th scope="col">Email</th>
+                                </tr>
+                                </thead>
+                                <tbody id="tblDriverBody">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--  End Admin Customer Page-->
+
+            <!-- Start Admin Driver Page -->
+            <div style="display: none" id="admin_Order_Page">
+                <div class="container-fluid">
+                    <h3 class="text-dark mb-4 mt-4">Orders</h3>
+                    <button class="btn text-white" id="btnOrdersRefresh"
+                            style="background-color: #f39c12; position: fixed; left: 90%; top: 14%;"><img class="mr-2"
+                                                                                                          style="width: 25px; height: 25px;"
+                                                                                                          src="../assets/icon/icons8_refresh_32.png">
+                        Refresh
+                    </button>
+                    <div class="table-box" style="height: 250px; overflow: no-display">
+                        <div class="table-responsive-lg">
+                            <table class="table table-hover">
+                                <thead class="text-white" id="tblOrders">
+                                <tr>
+                                    <th scope="col">Booking ID</th>
+                                    <th scope="col">Car ID</th>
+                                    <th scope="col">Driver ID</th>
+                                    <th scope="col">Customer ID</th>
+                                    <th scope="col">Order Date</th>
+                                    <th scope="col">Notes</th>
+                                    <th scope="col">Pickup Date</th>
+                                    <th scope="col">Return Date</th>
+                                    <th scope="col">Status</th>
+                                </tr>
+                                </thead>
+                                <tbody id="tblOrderBody">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--  End Admin Customer Page-->
+
+            <!-- Start Admin Driver Page -->
+            <div style="display: none" id="admin_Payment_Page">
+                <div class="container-fluid">
+                    <h3 class="text-dark mb-4 mt-4">Payments</h3>
+                    <button class="btn text-white" id="btnPaymentRefresh"
+                            style="background-color: #f39c12; position: fixed; left: 90%; top: 14%;"><img class="mr-2"
+                                                                                                          style="width: 25px; height: 25px;"
+                                                                                                          src="../assets/icon/icons8_refresh_32.png">
+                        Refresh
+                    </button>
+                    <div class="table-box" style="height: 250px; overflow: no-display">
+                        <div class="table-responsive-lg">
+                            <table class="table table-hover">
+                                <thead class="text-white" id="tblPayment">
+                                <tr>
+                                    <th scope="col">ID</th>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">Type</th>
+                                    <th scope="col">Amount</th>
+                                </tr>
+                                </thead>
+                                <tbody id="tblPaymentBody">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--  End Admin Customer Page-->
+
+        </div>
+    </div>
+
+</div>
+
+
+<script src="../js/jquery.min.js"></script>
+<script src="../js/admin/chart.min.js"></script>
+<script src="../js/admin/bs-init.js"></script>
+<script src="../js/admin/theme.js"></script>
+<script src="../js/admin/AdminOrder.js"></script>
+<script src="../js/admin/Admin.js"></script>
+<script src="../js/admin/AdminProfile.js"></script>
+<script src="../js/admin/AdminCustomers.js"></script>
+<script src="../js/admin/AdminCar.js"></script>
+<script src="../js/admin/AdminDriver.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../src/testing/testing.js"></script>
+</body>
+</html>

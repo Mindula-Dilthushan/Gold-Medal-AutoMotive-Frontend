@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width initial-scale=1 maximum-scale=1 minimum-scale=1">
+    <title>GMA - Driver</title>
+    <link rel="icon" href="../assets/img/logo.png">
+    <link rel="stylesheet" href="../css/bootstrap/cust/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/driver.css">
+</head>
+<body>
+
+<div class="navbar m-0 p-0" style="background-color: #0097e6">
+    <div class="m-0 p-0 ml-2"><img id="admin_logo" src="../assets/img/logo.png"></div>
+    <div class="text-white position-absolute" id="title">Gold Medal AutoMotive</div>
+    <div><a class="text-white" id="btnDriverProfile" style="cursor: pointer">Profile</a></div>
+    <div><a class="text-white" id="btnDriverSchedule" style="cursor: pointer">Schedule</a></div>
+    <div><a href="../index.html" class="text-white" id="btnDriverLogOut" style="cursor: pointer">Log Out</a></div>
+</div>
+
+<div class="main-panel bg-light m-0 p-0 ">
+
+    <!--Start Driver Profile Page-->
+    <div style="display: block" id="driverProfile" class="p-1">
+        <div class="container-fluid mt-1">
+            <h3 class="text-dark mt-3 mb-3" style="left: 42%; position: relative">My Profile</h3>
+            <div class="col-lg-12 p-0">
+                <div class="row">
+                    <div class="col">
+                        <div class="card shadow mb-3">
+                            <div class="card-header py-3">
+                                <p class="m-0 font-weight-bold">Profile Settings</p>
+                            </div>
+                            <div class="card-body">
+                                <form>
+                                    <div class="form-row">
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label><strong>ID</strong></label>
+                                                <input id="driverID"
+                                                       class="form-control"
+                                                       type="text"
+                                                       placeholder="D###"
+                                                       name="id">
+                                            </div>
+                                        </div>
+
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label><strong>Name</strong></label>
+                                                <input id="driverName"
+                                                       class="form-control"
+                                                       type="text"
+                                                       placeholder="driver.name"
+                                                       name="name">
+                                            </div>
+                                        </div>
+
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label><strong>NIC</strong></label>
+                                                <input id="driverNic"
+                                                       class="form-control"
+                                                       type="text"
+                                                       placeholder="driver.Nic"
+                                                       name="nic">
+                                            </div>
+                                        </div>
+
+
+
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label><strong>Email</strong></label>
+                                                <input id="driverEmail"
+                                                       class="form-control"
+                                                       type="email"
+                                                       placeholder="driver@example.com"
+                                                       name="email">
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label><strong>Contact</strong></label>
+                                                <input id="driverCont"
+                                                       class="form-control"
+                                                       type="text"
+                                                       placeholder="driver.contact"
+                                                       name="contact">
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label><strong>Password</strong></label>
+                                                <input id="driverPw"
+                                                       class="form-control"
+                                                       type="password"
+                                                       placeholder="driver.password"
+                                                       name="password">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-2">
+                                        <button id="btnDriverUpdate" class="btn  ml-2 btn-sm text-white" type="button" style="background-color: #0097e6">
+                                            Update
+                                        </button>
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="card mb-3">
+                            <div class="card-body text-center shadow">
+                                <img class="rounded-circle mb-3 mt-3" src="../assets/img/me/me.jpg" width="170" height="170"/>
+                                <div class="mb-3">
+                                    <button class="btn btn-sm mb-2 mt-2 text-white" type="button" style="background-color: #0097e6" id=btnDriverChange">
+                                        Change Photo
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <!--End Customer Page-->
+
+    <!--Start Driver Schedule Page-->
+    <div style="display: none" id="driverSchedule" class="p-1">
+        <div class="container-fluid mt-1">
+            <h3 class="text-dark mt-3 mb-4" style="left: 44%; position: relative">Schedule</h3>
+            <div class="table-box p-1" style="height: auto; overflow: no-display">
+                <div class="table-responsive-lg">
+                    <table class="table table-hover">
+                        <thead class="text-white" id="tblDriverSchedule">
+                        <tr>
+                            <th scope="col">Customer Name</th>
+                            <th scope="col">Customer Contact</th>
+                            <th scope="col">Car ID</th>
+                            <th scope="col">Pick Date</th>
+                            <th scope="col">Return Date</th>
+                        </tr>
+                        </thead>
+                        <tbody id="tblDriverScheduleBody">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div>
+            </div>
+        </div>
+    </div>
+    <!--End Driver Schedule Page-->
+
+</div>
+
+<script src="../js/jquery.min.js"></script>
+<script src="../js/driver/Driver.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+</body>
+</html>
